@@ -1,6 +1,5 @@
 const db = require('./db');
 const User = require('./User');
-const Subject = require('./Subject');
 const seed = require('./seed');
 
 // If we were to create any associations between different tables

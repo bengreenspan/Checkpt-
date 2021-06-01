@@ -4,10 +4,6 @@ This checkpoint is primarily to help us understand how well you've absorbed the 
 
 To this end — and perhaps it goes without saying — we ask that you don't help each other or cheat.
 
-## Introduction Video (Watch This First)
-
-[![Pillars: Getting Started](https://img.youtube.com/vi/XERflPFkcjg/0.jpg)](https://youtu.be/XERflPFkcjg)
-
 ## Resources
 
 Please read the Academic Integrity Policy (`pillars-academic-integrity-policy.md` at the root of this repo).
