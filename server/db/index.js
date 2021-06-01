@@ -9,7 +9,6 @@ module.exports = {
   db,
   seed,
   models: {
-    User,
-    Subject,
+    User
   },
 };
