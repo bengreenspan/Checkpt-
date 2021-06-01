@@ -99,7 +99,7 @@ describe('Tier 1: Basic Fields, Class Methods, GET Routes', () => {
       xit('User.findUnassignedStudents is a class method', () => {
         expect(User.findUnassignedStudents).to.be.a(
           'function',
-          "findTeachersAndMentees isn't a class method"
+          "findUnassignedStudents isn't a class method"
         );
       });
 
