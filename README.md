@@ -14,7 +14,6 @@ Please read the Academic Integrity Policy (`pillars-academic-integrity-policy.md
 - Express Route Parameters
 - Express Status Codes
 - Sequelize Model Configuration
-- Sequelize Hooks
 - Sequelize Class Methods
 
 ## Starting
