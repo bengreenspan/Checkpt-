@@ -21,7 +21,7 @@ describe('Tier 1: Basic Fields, Class Methods, GET Routes', () => {
 
     describe('Basic Fields: name and userType', () => {
       describe('name', () => {
-        xit('name is a string', async () => {
+        it('name is a string', async () => {
           const hannah = await User.create({ name: 'HANNAH' });
           expect(hannah.name).to.equal(
             'HANNAH',
@@ -29,7 +29,7 @@ describe('Tier 1: Basic Fields, Class Methods, GET Routes', () => {
           );
         });
 
-        xit('name must be unique', async () => {
+        it('name must be unique', async () => {
           // We shouldn't be able to create two users with the same name.
           await User.create({ name: 'HANNAH' });
           await expect(
@@ -38,7 +38,7 @@ describe('Tier 1: Basic Fields, Class Methods, GET Routes', () => {
           ).to.be.rejected;
         });
 
-        xit('name cannot be null', async () => {
+        it('name cannot be null', async () => {
           // We shouldn't be able to create a user without a name.
           await expect(
             User.create({}),
@@ -46,7 +46,7 @@ describe('Tier 1: Basic Fields, Class Methods, GET Routes', () => {
           ).to.be.rejected;
         });
 
-        xit('name cannot be an empty string', async () => {
+        it('name cannot be an empty string', async () => {
           // We also shouldn't be able to create a user with an empty name.
           await expect(
             User.create({ name: '' }),
