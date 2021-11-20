@@ -11,6 +11,16 @@ const User = db.define('user', {
 }
  },
 
+ userType: {
+  type: Sequelize.DataTypes.ENUM('STUDENT', 'TEACHER'),
+  defaultValue: 'STUDENT',
+  allowNull: false,
+
+
+ }
+  
+
+
 
  
 });

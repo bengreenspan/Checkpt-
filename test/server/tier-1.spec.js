@@ -56,7 +56,7 @@ describe('Tier 1: Basic Fields, Class Methods, GET Routes', () => {
       });
 
       describe('userType', () => {
-        xit('userType can be either "STUDENT" or "TEACHER"', async () => {
+        it('userType can be either "STUDENT" or "TEACHER"', async () => {
           const hannah = await User.create({
             name: 'HANNAH',
             userType: 'TEACHER',
@@ -66,12 +66,12 @@ describe('Tier 1: Basic Fields, Class Methods, GET Routes', () => {
           expect(ali.userType).to.equal('STUDENT');
         });
 
-        xit('userType defaults to "STUDENT" if not provided', async () => {
+        it('userType defaults to "STUDENT" if not provided', async () => {
           const ali = await User.create({ name: 'ALI' });
           expect(ali.userType).to.equal('STUDENT');
         });
 
-        xit('userType cannot be null', async () => {
+        it('userType cannot be null', async () => {
           const aliPromise = User.create({
             name: 'ALI',
             userType: null,
@@ -82,7 +82,7 @@ describe('Tier 1: Basic Fields, Class Methods, GET Routes', () => {
           ).to.be.rejected;
         });
 
-        xit('userType can ONLY be either "STUDENT" or "TEACHER"', async () => {
+        it('userType can ONLY be either "STUDENT" or "TEACHER"', async () => {
           const aliPromise = User.create({
             name: 'ALI',
             userType: 'EAGER_TO_LEARN', // Invalid userType! This promise should reject.
