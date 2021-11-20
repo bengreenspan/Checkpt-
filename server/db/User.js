@@ -16,14 +16,19 @@ const User = db.define('user', {
   defaultValue: 'STUDENT',
   allowNull: false,
 
-
  }
-  
-
-
-
  
 });
+
+//class methods
+User.findUnassignedStudents = function(){
+  return User.findAll({
+    where:{
+      userType : 'STUDENT',
+      mentorId:  null 
+    }
+  })
+}
 
 
 /**

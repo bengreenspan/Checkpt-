@@ -96,14 +96,14 @@ describe('Tier 1: Basic Fields, Class Methods, GET Routes', () => {
     });
 
     describe('Class Method: findUnassignedStudents', () => {
-      xit('User.findUnassignedStudents is a class method', () => {
+      it('User.findUnassignedStudents is a class method', () => {
         expect(User.findUnassignedStudents).to.be.a(
           'function',
           "findUnassignedStudents isn't a class method"
         );
       });
 
-      xit('User.findUnassignedStudents returns all students who do not have a mentor', async () => {
+      it('User.findUnassignedStudents returns all students who do not have a mentor', async () => {
         const freddy = await User.create({
           name: 'FREDDY',
           userType: 'TEACHER',
@@ -167,7 +167,7 @@ describe('Tier 1: Basic Fields, Class Methods, GET Routes', () => {
     });
 
     describe('GET /api/users/unassigned', () => {
-      xit('responds with all unassigned students', async () => {
+      it('responds with all unassigned students', async () => {
         const response = await app.get('/api/users/unassigned');
         expect(response.status).to.equal(200);
         expect(response.body).to.be.an('array');
@@ -176,7 +176,7 @@ describe('Tier 1: Basic Fields, Class Methods, GET Routes', () => {
         expect(names).to.include('EDDY');
       });
 
-      xit('does not include any teachers in the response', async () => {
+      it('does not include any teachers in the response', async () => {
         const response = await app.get('/api/users/unassigned');
         const names = response.body.map((user) => user.name);
         expect(names).to.not.include(
@@ -189,7 +189,7 @@ describe('Tier 1: Basic Fields, Class Methods, GET Routes', () => {
         );
       });
 
-      xit('does not include any students who have a mentor', async () => {
+      it('does not include any students who have a mentor', async () => {
         const response = await app.get('/api/users/unassigned');
         const names = response.body.map((user) => user.name);
         expect(names).to.not.include(
