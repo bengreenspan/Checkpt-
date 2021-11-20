@@ -39,3 +39,4 @@ Please read the Academic Integrity Policy (`pillars-academic-integrity-policy.md
 - That this project includes some working front-end code in `client/index.js`, bundled with Webpack into `public/bundle.js`. You won't need to write any front-end code to fulfill the requirements, but you are welcome to read through that front-end code to understand how it uses axios to make requests of the back-end.
 - If you are uncertain what a spec is doing or asking of you, or you've gotten stuck, _ask for help_. We may not be able to give you any hints, but you won't know if you don't ask, and sometimes the problem is technical rather than related to the checkpoint itself.
 - Please don't submit `console.log`s and other debug code.
+# Checkpt-
