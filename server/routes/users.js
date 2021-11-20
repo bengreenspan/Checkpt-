@@ -47,51 +47,29 @@ router.delete('/:id', async (req, res, next)=> {
     if(!user){
       return res.sendStatus(404)
     }
-    else if(user === NaN){ //not sure why this isnt working
-      res.sendStatus(204);
-    }
+   
 else{
     await user.destroy();
     res.sendStatus(204);
   }
 }
   catch(x){
-    next(x);
+    res.sendStatus(400);
   }
   
   });
 
-   router.post('/', async(req, res, next)=> {
-        try {
-          let userExists = await client.query(
-            //something in here saying if name exists
-          );
-          if(userExists){
-            res.sendStatus(409);
-          }
-          else{
 
-    `
-            INSERT INTO User(name) VALUES ($1)  *;
-          `, 
-          res.sendStatus(201);
-          }
+  router.post('/', async(req, res, next) => {
+    try {
+      res.status(201);
+      res.send(await User.create( { userId: req.params.id, ...req.body }));
+    }
+    catch(ex) {
+      res.sendStatus(409);
+    }
+  });
 
-
-
-
-
-          
-
-        const user = await User.findByPk(req.params.id)
-        res.sendStatus(204);
-        res.sendStatus(409);
-      
-      }
-      catch(ex){
-        next(ex);
-      }
-    });
 
 
 

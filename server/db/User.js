@@ -18,18 +18,18 @@ const User = db.define('user', {
   allowNull: false,
  },
 
+
  isStudent: {
   type: VIRTUAL,
   get: function() {
-    return this.type === 'STUDENT';
+    return this.userType === 'STUDENT';
   }
- },
-
- isTeacher: {
+},
+isTeacher: {
   type: VIRTUAL,
-  get: function(){
-    if (this.type === 'TEACHER'){return false}
-    else {return false}
+  get: function() {
+    return this.userType === 'TEACHER';
+
 
   }
  }

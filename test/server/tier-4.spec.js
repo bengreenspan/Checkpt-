@@ -44,7 +44,7 @@ describe('Tier 4: POST Routes, Request Body', () => {
     });
 
     describe('POST /api/users', () => {
-      xit('responds with 201 and the newly created user', async () => {
+      it('responds with 201 and the newly created user', async () => {
         const response = await app.post('/api/users').send({ name: 'FLIP' });
         expect(response.status).to.equal(201);
         expect(response.body).to.be.an('object');
