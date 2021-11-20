@@ -1,9 +1,10 @@
 const Sequelize = require('sequelize');
 const db = require('./db');
+const { DataTypes: { STRING, ENUM, VIRTUAL}} = Sequelize;
 
 const User = db.define('user', {
  name: {
-  type: Sequelize.DataTypes.STRING,
+  type: STRING,
   unique: true,
   allowNull: false,
   validate: {
@@ -12,12 +13,27 @@ const User = db.define('user', {
  },
 
  userType: {
-  type: Sequelize.DataTypes.ENUM('STUDENT', 'TEACHER'),
+  type: ENUM('STUDENT', 'TEACHER'),
   defaultValue: 'STUDENT',
   allowNull: false,
+ },
 
+ isStudent: {
+  type: VIRTUAL,
+  get: function() {
+    return this.type === 'STUDENT';
+  }
+ },
+
+ isTeacher: {
+  type: VIRTUAL,
+  get: function(){
+    if (this.type === 'TEACHER'){return false}
+    else {return false}
+
+  }
  }
- 
+
 });
 
 //class methods
@@ -29,6 +45,22 @@ User.findUnassignedStudents = function(){
     }
   })
 }
+
+User.findTeachersAndMentees = function(){
+  return User.findAll({
+    where:{
+      userType : 'TEACHER'
+    },
+    include: [
+      {
+        model: User, as: 'mentees'
+      }
+    ]
+   
+  })
+
+}
+
 
 
 /**
